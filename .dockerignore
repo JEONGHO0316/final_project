@@ -1,0 +1,20 @@
+# 1. Git 기록 (엄청 무거움, 이미지엔 필요 없음)
+.git/
+.gitignore
+
+# 2. GitHub Actions 설정 파일 (이미지 안에서 CI 돌릴 거 아님)
+.github/
+
+# 3. K8s 설정 파일 (ArgoCD가 쓰는 거지, 앱 자체가 쓰는 게 아님)
+k8s/
+
+# 4. Docker 관련 파일 자신
+Dockerfile
+.dockerignore
+
+# 5. 로컬 IDE 설정 및 문서
+.idea/
+.vscode/
+README.md
+mvnw
+mvnw.cmd

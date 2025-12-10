@@ -13,7 +13,7 @@ env:
   ECR_REPOSITORY: petclinic-app
   # 님의 ECR 주소 (수정 불필요)
   ECR_REGISTRY: 639242342449.dkr.ecr.ap-northeast-2.amazonaws.com
-  IMAGE_TAG: ${{ github.sha }} # ✅ 이미지 태그를 현재 Git Commit SHA(고유값)로 정의
+  IMAGE_TAG: v${{ github.run_number }} # ✅ 이미지 태그를 현재 Git Commit SHA(고유값)로 정의
 
 jobs:
   build-and-push:
@@ -60,5 +60,5 @@ jobs:
     - name: Commit and Push Updated YAML
       uses: EndBug/add-and-commit@v9
       with:
-        message: 'GitOps: Deploy new image version ${{ github.sha }}'
+        message: 'GitOps: Deploy new image version ${{ env.IMAGE_TAG }}'
         add: 'k8s/was-deployment.yaml'
