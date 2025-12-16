@@ -9,6 +9,8 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing # 외부 접근용
     alb.ingress.kubernetes.io/target-type: ip # Pod IP로 직접 라우팅
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    
+    alb.ingress.kubernetes.io/load-balancer-name: final-project
 
     # 헬스체크 설정
     alb.ingress.kubernetes.io/healthcheck-path: /
